@@ -1,6 +1,5 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -13,25 +12,22 @@ public class Main {
         String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s %n";
         String formatoTablaPronosticos = "%-15s | %-10s | %10s | %18s | %-18s | %10s %n";
 
-//        System.out.println("");
-//        System.out.println("RESULTADOS:");
-//        System.out.printf(formatoTablaResultados,"Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Goles equipo 1","Goles equipo 2");
+        System.out.println("");
+        System.out.println("RESULTADOS:");
+        System.out.printf(formatoTablaResultados,"Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Goles equipo 1","Goles equipo 2");
 
-        System.out.println(Arrays.toString(resultados.get(0)));
         for (String[] esteResultado : resultados) {
 
-
-            System.out.println(Arrays.toString(esteResultado));
-//            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5]);
+            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5]);
         }
 
-//        System.out.println("");
-//        System.out.println("PRONOSTICOS:");
-//        System.out.printf(formatoTablaPronosticos,"Nombre persona","Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Ganador");
+        System.out.println("");
+        System.out.println("PRONOSTICOS:");
+        System.out.printf(formatoTablaPronosticos,"Nombre persona","Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Ganador");
 
         for (String[] estepronosticos : pronosticos) {
 
-//            System.out.printf(formatoTablaPronosticos, estepronosticos[0], estepronosticos[1], estepronosticos[2], estepronosticos[3], estepronosticos[4], estepronosticos[5]);
+            System.out.printf(formatoTablaPronosticos, estepronosticos[0], estepronosticos[1], estepronosticos[2], estepronosticos[3], estepronosticos[4], estepronosticos[5]);
         }
 
     }
@@ -73,14 +69,12 @@ public class Main {
                 fila[4] = rs.getString("GOLES_1");
                 fila[5] = rs.getString("GOLES_2");
                 resultados.add(fila);
-                //System.out.println(Arrays.toString(fila));
 
             }
             con.close();
         } catch (SQLException e) {
             System.out.println("Error con SQL");
         }
-
         return resultados;
     }
 
