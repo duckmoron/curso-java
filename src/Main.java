@@ -5,22 +5,43 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        // PRUEBAS
+        //Partido partido1 = new Partido("Argentina", 3,4,"Polonia");
+        //System.out.println(partido1.getResultado());
+        // FIN PRUEBAS
+
         List<String[]> resultados = leerResultados();
         List<String[]> pronosticos = leerPronosticos();
 
+        List<Integer> resultadosGanador = new ArrayList<>();
+        List<String> participantes = new ArrayList<>();
+        List<String> rondas = new ArrayList<>();
+        List<String> fases = new ArrayList<>();
+
+
         // configuro para obtener formato tipo tabla
-        String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s %n";
+        String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s | %10s %n";
         String formatoTablaPronosticos = "%-15s | %-10s | %10s | %18s | %-18s | %10s %n";
 
+        // Header tabla RESULTADOS:
         System.out.println("");
         System.out.println("RESULTADOS:");
-        System.out.printf(formatoTablaResultados,"Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Goles equipo 1","Goles equipo 2");
+        System.out.printf(formatoTablaResultados,"Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Goles equipo 1","Goles equipo 2","GANADOR");
 
         for (String[] esteResultado : resultados) {
 
-            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5]);
+            // guardo los valores en la clase partido
+            Partido partido = new Partido(esteResultado[2], esteResultado[4], esteResultado[5], esteResultado[3]);
+
+            // guardo el resultadoGanador de cada partido tomando los datos de resultados
+            resultadosGanador.add(partido.getResultado());
+
+            // muestro los datos de resultado + GANADOR
+            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5], partido.getResultado());
         }
 
+
+        // Header tabla PRONOSTICOS:
         System.out.println("");
         System.out.println("PRONOSTICOS:");
         System.out.printf(formatoTablaPronosticos,"Nombre persona","Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Ganador");
@@ -29,6 +50,27 @@ public class Main {
 
             System.out.printf(formatoTablaPronosticos, estepronosticos[0], estepronosticos[1], estepronosticos[2], estepronosticos[3], estepronosticos[4], estepronosticos[5]);
         }
+
+        for (String[] esteParticipante : pronosticos) {
+
+            // guardo los datos sin repetir obteniendo cada participante.
+            if(!participantes.contains(esteParticipante[0])){
+                participantes.add(esteParticipante[0]);
+            }
+            // guardo los datos sin repetir obteniendo cada fase.
+            if(!fases.contains(esteParticipante[1])){
+                fases.add(esteParticipante[1]);
+            }// guardo los datos sin repetir obteniendo cada ronda.
+            if(!rondas.contains(esteParticipante[2])){
+                rondas.add(esteParticipante[2]);
+            }
+
+        }
+
+        System.out.println("");
+        System.out.printf("%15s %s %n","PARTICIPANTES:",participantes);
+        System.out.printf("%15s %s %n","FASES:",fases);
+        System.out.printf("%15s %s %n","RONDAS:",rondas);
 
     }
 
@@ -42,7 +84,7 @@ public class Main {
     // Posicion 4: Goles equipo 1
     // Posicion 5: Goles equipo 2
     public static List<String[]> leerResultados() {
-        List<String[]> resultados = new ArrayList<>();
+        List<String []> resultados = new ArrayList<>();
 
         // Cargamos el Driver
         try {
@@ -69,7 +111,6 @@ public class Main {
                 fila[4] = rs.getString("GOLES_1");
                 fila[5] = rs.getString("GOLES_2");
                 resultados.add(fila);
-
             }
             con.close();
         } catch (SQLException e) {
