@@ -19,8 +19,6 @@ public class Pronostico extends DatosSQL{
 
         List<String> pronostico = new ArrayList<>();
 
-        System.out.println("PARTICIPANTE DE LA CLASE: " + participante);
-
         for (String[] participantePronostico : this.pronosticos) {
 
             // guardo los datos del pronostico segun participante.
