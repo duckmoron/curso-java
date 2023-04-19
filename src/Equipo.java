@@ -1,4 +1,7 @@
 public class Equipo {
+
+    // tiene sentido esta clase?
+
     private String nombre;
     private String descripcion;
 

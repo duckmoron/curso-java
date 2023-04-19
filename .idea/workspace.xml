@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8dcbdac-139a-4773-9423-2a3d86086f74" name="Changes" comment="Primer commit del proyecto">
-      <change afterPath="$PROJECT_DIR$/src/Equipo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Fase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Partido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pronostico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ResultadoEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ronda.java" afterDir="false" />
+    <list default="true" id="a8dcbdac-139a-4773-9423-2a3d86086f74" name="Changes" comment="Creando clases">
+      <change afterPath="$PROJECT_DIR$/src/DatosSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Participante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pronostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pronostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResultadoEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultadoEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ronda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ronda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,17 +40,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/_PROYECTOS/ME/CURSOS/JAVA/_proyectos/ConexionBD-master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/_PROYECTOS/ME/CURSOS/JAVA/_proyectos/udemy_04",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681586360218</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creando clases">
+      <created>1681753462382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681753462382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +111,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit del proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer commit del proyecto" />
+    <MESSAGE value="Creando clases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creando clases" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

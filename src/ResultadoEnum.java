@@ -2,5 +2,9 @@ import java.util.ArrayList;
 
 public class ResultadoEnum {
 
-    // ArrayList<Partido> partidos;
+    // Aca deberia comparar el array de resultados, con los otros resultados?
+    // puntajes?
+    // puntaje rondas?
+    // puntaje fases?
+
 }

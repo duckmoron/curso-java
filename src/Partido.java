@@ -1,4 +1,4 @@
-public class Partido {
+public class Partido{
 
     private String golesEquipo1;
     private String golesEquipo2;
@@ -11,6 +11,7 @@ public class Partido {
 
 
     public Partido(String equipo1, String golesEquipo1, String golesEquipo2, String equipo2) {
+
         this.golesEquipo1 = golesEquipo1;
         this.golesEquipo2 = golesEquipo2;
         this.equipo1 = equipo1;
@@ -24,7 +25,7 @@ public class Partido {
     // resultadoPartido = 0: EMPATE.
     // resultadoPartido = 1: Equipo1.
     // resultadoPartido = 2: Equipo2.
-    public int resultadoPartido(int golesEquipo1, int golesEquipo2){
+    private int resultadoPartido(int golesEquipo1, int golesEquipo2){
 
         resultado = 0;
 
