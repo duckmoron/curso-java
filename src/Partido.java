@@ -1,4 +1,4 @@
-public class Partido{
+public class Partido {
 
     private String golesEquipo1;
     private String golesEquipo2;

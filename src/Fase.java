@@ -2,17 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Fase extends DatosSQL{
+public class Fase {
 
-    ArrayList<Ronda> rondas;
-    private List<String[]> resultados = leerResultados();
+    private List<String[]> resultados = DatosSQL.leerResultados();
 
     private List<String> fases;
 
     public Fase() {
-        super(leerResultados(),leerPronosticos());
-
-        rondas = new ArrayList<>();
 
         setFases(cantidadFases());
     }

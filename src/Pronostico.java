@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Pronostico extends DatosSQL{
+public class Pronostico {
 
+    private List<String[]> pronosticos = DatosSQL.leerPronosticos();
     private String participante;
     private List<Integer> pronostico;
 
     public Pronostico(String participante) {
-        super(leerResultados(),leerPronosticos());
+
         this.participante = participante;
         pronostico = new ArrayList<>();
 

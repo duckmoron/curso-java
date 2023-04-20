@@ -69,6 +69,11 @@ public class Main {
 
             // Pronostico del participante:
             // System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(i) + ": " + participantePronostico);
+
+            // Resultados:
+            // Mariana: 20, Pedro:24, Juan: 20, Sofia: 21.
+            // Sofia acierta completa la ronda final.
+            // Nadie acierta completa la fase
         }
 
     }

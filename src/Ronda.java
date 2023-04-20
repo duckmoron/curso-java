@@ -2,17 +2,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Ronda extends DatosSQL {
+public class Ronda {
 
-    ArrayList<Partido> partidos;
-    private List<String[]> resultados = leerResultados();
+    private List<String[]> resultados = DatosSQL.leerResultados();
 
     private List<String> rondas;
 
     public Ronda() {
-        super(leerResultados(),leerPronosticos());
-
-        partidos = new ArrayList<>();
 
         setRondas(cantidadRondas());
     }
