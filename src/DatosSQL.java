@@ -4,14 +4,6 @@ import java.util.List;
 
 public class DatosSQL {
 
-    List<String[]> resultados = leerResultados();
-    List<String[]> pronosticos = leerPronosticos();
-
-    public DatosSQL(List<String[]> resultados, List<String[]> pronosticos) {
-        this.resultados = resultados;
-        this.pronosticos = pronosticos;
-    }
-
     // Va a devolver una Lista con un arreglo de String que va a contener:
     // Posicion 0: Fase
     // Posicion 1: Ronda

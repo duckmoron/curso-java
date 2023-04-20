@@ -12,8 +12,8 @@ public class ResultadoEnum {
     private int puntosExtraRonda = 5;
     private int puntosExtraFase = 10;
 
-    List<Integer> resultado = new ArrayList<>();
-    List<Integer> pronostico = new ArrayList<>();
+    List<Integer> resultado;
+    List<Integer> pronostico;
 
 
     public ResultadoEnum(List<Integer> resultado, List<Integer> pronostico) {
