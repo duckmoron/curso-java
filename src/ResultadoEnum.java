@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class ResultadoEnum {
 
+    private List<String[]> resultados = DatosSQL.leerResultados();
+
     private int puntos;
 
     private int puntosPartido = 1;
