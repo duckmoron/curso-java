@@ -16,7 +16,7 @@ public class Pronostico {
         setPronostico(participantePronostico(participante));
     }
 
-    public List<Integer> participantePronostico(String participante){
+    public List<Integer> participantePronostico(String participante) {
 
         List<Integer> pronostico = new ArrayList<>();
 

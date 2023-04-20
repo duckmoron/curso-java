@@ -12,14 +12,14 @@ public class Ronda {
         setRondas(cantidadRondas());
     }
 
-    public List<String> cantidadRondas(){
+    public List<String> cantidadRondas() {
 
         List<String> rondas = new ArrayList<>();
 
         for (String[] cantidadRondas : this.resultados) {
 
             // guardo los datos sin repetir obteniendo cada ronda.
-            if(!rondas.contains(cantidadRondas[1])){
+            if (!rondas.contains(cantidadRondas[1])) {
                 rondas.add(cantidadRondas[1]);
             }
 

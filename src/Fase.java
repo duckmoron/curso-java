@@ -13,14 +13,14 @@ public class Fase {
         setFases(cantidadFases());
     }
 
-    public List<String> cantidadFases(){
+    public List<String> cantidadFases() {
 
         List<String> fases = new ArrayList<>();
 
         for (String[] cantidadFases : this.resultados) {
 
             // guardo los datos sin repetir obteniendo cada fase.
-            if(!fases.contains(cantidadFases[0])){
+            if (!fases.contains(cantidadFases[0])) {
                 fases.add(cantidadFases[0]);
             }
 

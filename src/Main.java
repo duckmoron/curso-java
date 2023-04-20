@@ -31,7 +31,7 @@ public class Main {
 
         // Header tabla RESULTADOS:
         System.out.println("\nTABLA DE RESULTADOS:\n");
-        System.out.printf(formatoTablaResultados,"Fase","Ronda","Nombre equipo 1","Nombre equipo 2","Goles equipo 1","Goles equipo 2","GANADOR");
+        System.out.printf(formatoTablaResultados, "Fase", "Ronda", "Nombre equipo 1", "Nombre equipo 2", "Goles equipo 1", "Goles equipo 2", "GANADOR");
 
         // Contenido de la tabla RESULTADOS:
         for (String[] esteResultado : resultados) {
@@ -47,24 +47,23 @@ public class Main {
         }
 
         // Muestro los datos por separado
-        System.out.printf("\n%15s %s %n","PARTICIPANTES:",participantes);
-        System.out.printf("%15s %s %n","FASES:",fases);
-        System.out.printf("%15s %s %n","RONDAS:",rondas);
+        System.out.printf("\n%15s %s %n", "PARTICIPANTES:", participantes);
+        System.out.printf("%15s %s %n", "FASES:", fases);
+        System.out.printf("%15s %s %n", "RONDAS:", rondas);
         //System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
         System.out.println(" ");
-        System.out.printf("%15s %s %n","RESULTADO:","");
-
+        System.out.printf("%15s %s %n", "RESULTADO:", "");
 
 
         // BUCLE comparando resultadosGanador con los pronósticos de cada participante.
-        for(int i = 0;i < participantes.size();i++) {
+        for (int i = 0; i < participantes.size(); i++) {
             // Creo un objeto por participante
             Pronostico pronostico = new Pronostico(cantidadParticipantes.getParticipantes().get(i));
             participantePronostico = pronostico.getPronostico();
 
             // Comparo resultadoGanador con cada participante
             ResultadoEnum resultadoEnum = new ResultadoEnum(resultadosGanador, participantePronostico);
-            System.out.printf("%15s %s %n",cantidadParticipantes.getParticipantes().get(i)+": ",resultadoEnum.getPuntos());
+            System.out.printf("%15s %s %n", cantidadParticipantes.getParticipantes().get(i) + ": ", resultadoEnum.getPuntos());
 
             // List Pronostico del participante:
             // System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(i) + ": " + participantePronostico);

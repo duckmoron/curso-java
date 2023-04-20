@@ -24,12 +24,12 @@ public class ResultadoEnum {
     }
 
 
-    private Integer puntosParticipante(List<Integer> resultado, List<Integer> pronostico){
+    private Integer puntosParticipante(List<Integer> resultado, List<Integer> pronostico) {
 
         puntos = 0;
 
-        for(int i = 0; i<resultado.size();i++){
-            if(Objects.equals(resultado.get(i),pronostico.get(i))){
+        for (int i = 0; i < resultado.size(); i++) {
+            if (Objects.equals(resultado.get(i), pronostico.get(i))) {
                 puntos += puntosPartido;
             }
         }

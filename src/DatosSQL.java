@@ -12,7 +12,7 @@ public class DatosSQL {
     // Posicion 4: Goles equipo 1
     // Posicion 5: Goles equipo 2
     public static List<String[]> leerResultados() {
-        List<String []> resultados = new ArrayList<>();
+        List<String[]> resultados = new ArrayList<>();
 
         // Cargamos el Driver
         try {
@@ -90,5 +90,5 @@ public class DatosSQL {
         }
 
         return pronosticos;
-}
+    }
 }

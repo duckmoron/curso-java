@@ -14,14 +14,14 @@ public class Participante {
         setParticipantes(cantidadParticipantes());
     }
 
-    public List<String> cantidadParticipantes(){
+    public List<String> cantidadParticipantes() {
 
         List<String> participantes = new ArrayList<>();
 
         for (String[] cantidadParticipantes : this.pronosticos) {
 
             // guardo los datos sin repetir obteniendo cada participante.
-            if(!participantes.contains(cantidadParticipantes[0])){
+            if (!participantes.contains(cantidadParticipantes[0])) {
                 participantes.add(cantidadParticipantes[0]);
             }
 
