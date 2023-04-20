@@ -6,9 +6,8 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
 
-        // guardo los datos de resultados y pronosticos
+        // guardo los datos de resultados
         List<String[]> resultados = DatosSQL.leerResultados();
-        List<String[]> pronosticos = DatosSQL.leerPronosticos();
 
         // guardo los datos limpios, sin repetir
         List<String> participantes;
@@ -61,13 +60,15 @@ public class Main {
 
         // BUCLE comparando resultadosGanador con los pronósticos de cada participante.
         for(int i = 0;i < participantes.size();i++) {
+            // Creo un objeto por participante
             Pronostico pronostico = new Pronostico(cantidadParticipantes.getParticipantes().get(i));
             participantePronostico = pronostico.getPronostico();
 
+            // Comparo resultadoGanador con cada participante
             ResultadoEnum resultadoEnum = new ResultadoEnum(resultadosGanador, participantePronostico);
             System.out.printf("%15s %s %n",cantidadParticipantes.getParticipantes().get(i)+": ",resultadoEnum.getPuntos());
 
-            // Pronostico del participante:
+            // List Pronostico del participante:
             // System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(i) + ": " + participantePronostico);
 
             // Resultados:
