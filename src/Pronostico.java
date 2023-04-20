@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Pronostico extends DatosSQL{
 
     private String participante;
-    private List<String> pronostico;
+    private List<Integer> pronostico;
 
     public Pronostico(String participante) {
         super(leerResultados(),leerPronosticos());
@@ -15,15 +15,15 @@ public class Pronostico extends DatosSQL{
         setPronostico(participantePronostico(participante));
     }
 
-    public List<String> participantePronostico(String participante){
+    public List<Integer> participantePronostico(String participante){
 
-        List<String> pronostico = new ArrayList<>();
+        List<Integer> pronostico = new ArrayList<>();
 
         for (String[] participantePronostico : this.pronosticos) {
 
             // guardo los datos del pronostico segun participante.
             if (Objects.equals(participantePronostico[0], participante)) {
-                pronostico.add(participantePronostico[5]);
+                pronostico.add(Integer.valueOf(participantePronostico[5]));
             }
 
         }
@@ -31,11 +31,11 @@ public class Pronostico extends DatosSQL{
         return pronostico;
     }
 
-    public List<String> getPronostico() {
+    public List<Integer> getPronostico() {
         return pronostico;
     }
 
-    public void setPronostico(List<String> pronostico) {
+    public void setPronostico(List<Integer> pronostico) {
         this.pronostico = pronostico;
     }
 }

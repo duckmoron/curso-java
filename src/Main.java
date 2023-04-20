@@ -12,7 +12,7 @@ public class Main {
         List<String> participantes;
         List<String> rondas;
         List<String> fases;
-        List<String> participantePronostico = new ArrayList<>();
+        List<Integer> participantePronostico = new ArrayList<>();
         List<Integer> resultadosGanador = new ArrayList<>();
 
         Participante cantidadParticipantes = new Participante();
@@ -23,9 +23,6 @@ public class Main {
 
         Ronda cantidadRondas = new Ronda();
         rondas = cantidadRondas.getRondas();
-
-        Pronostico pronostico = new Pronostico(cantidadParticipantes.getParticipantes().get(0));
-        participantePronostico = pronostico.getPronostico();
 
 
         // configuro para obtener formato tipo tabla
@@ -50,8 +47,9 @@ public class Main {
         System.out.printf("\n%15s %s %n","PARTICIPANTES:",participantes);
         System.out.printf("%15s %s %n","FASES:",fases);
         System.out.printf("%15s %s %n","RONDAS:",rondas);
-        System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
-        System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(0) + ": " + participantePronostico);
+        System.out.println(" ");
+        //System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
+        //System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(0) + ": " + participantePronostico);
 
 
         // bucle comparando resultadosGanador con los pronósticos de cada participante.
@@ -60,17 +58,13 @@ public class Main {
         // si todas las rondas dentro de la fase son correctas sumar X puntos.
         // Ordenar por puntajes.
 
+        for(int i = 0;i < participantes.size();i++) {
+            Pronostico pronostico = new Pronostico(cantidadParticipantes.getParticipantes().get(i));
+            participantePronostico = pronostico.getPronostico();
 
-       /* for (String[] esteParticipantes : pronosticos){
+            ResultadoEnum resultadoEnum = new ResultadoEnum(resultadosGanador, participantePronostico);
+            System.out.printf("%15s %s %n",cantidadParticipantes.getParticipantes().get(i)+": ",resultadoEnum.getPuntos());
+        }
 
-            // deberia guardar esto en participante. (nombre y su pronostico).
-
-            for(int i = 0;i<participantes.size();i++) {
-                if (Objects.equals(esteParticipantes[0], participantes.get(i))) {
-                    //System.out.println("PARTICIPANTE: " + esteParticipantes[0] + " PRONOSTICO: " + esteParticipantes[5]);
-                }
-            }
-
-        }*/
     }
 }
