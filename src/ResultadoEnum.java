@@ -34,6 +34,8 @@ public class ResultadoEnum {
             }
         }
 
+        // FALTA SUMAR puntosExtraRonda Y puntosExtraFase.
+
         return puntos;
     }
 
