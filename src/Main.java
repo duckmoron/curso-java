@@ -4,6 +4,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        // clase de estilo de colores.
+        ColoresTxt color = new ColoresTxt();
+
         // guardo los datos de resultados
         List<String[]> resultados = DatosSQL.leerResultados();
 
@@ -30,7 +33,9 @@ public class Main {
         String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s | %15s %n";
 
         // Header tabla RESULTADOS:
-        System.out.println("\nTABLA DE RESULTADOS:\n");
+        System.out.println("");
+        System.out.println(color.fAzul + "TABLA DE RESULTADOS:" + color.b);
+        System.out.println("");
         System.out.printf(formatoTablaResultados, "Fase", "Ronda", "Nombre equipo 1", "Nombre equipo 2", "Goles equipo 1", "Goles equipo 2", "GANADOR");
 
         // Contenido de la tabla RESULTADOS:
@@ -56,14 +61,15 @@ public class Main {
         }
 
         // Muestro los datos por separado
-        System.out.printf("\n%15s %s %n", "PARTICIPANTES:", participantes);
+        System.out.println(color.amarillo);
+                System.out.printf("%15s %s %n", "PARTICIPANTES:", participantes);
         System.out.printf("%15s %s %n", "FASES:", fases);
         System.out.printf("%15s %s %n", "RONDAS:", rondas);
         // System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
 
 
         // BUCLE comparando resultadosGanador con los pronósticos de cada participante.
-        System.out.println(" ");
+        System.out.println(color.celeste);
         System.out.printf("%15s %n", "RESULTADOS:");
 
         for (int i = 0; i < participantes.size(); i++) {
@@ -87,6 +93,7 @@ public class Main {
             // Sofia completa solo la ronda final.
             // Nadie completa una fase.
         }
+        System.out.println(color.b);
 
     }
 }
