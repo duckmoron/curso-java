@@ -27,7 +27,7 @@ public class Main {
 
 
         // configuro para obtener formato tipo tabla
-        String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s | %10s %n";
+        String formatoTablaResultados = "%-10s | %-10s | %18s | %-18s | %15s | %-15s | %15s %n";
 
         // Header tabla RESULTADOS:
         System.out.println("\nTABLA DE RESULTADOS:\n");
@@ -36,42 +36,56 @@ public class Main {
         // Contenido de la tabla RESULTADOS:
         for (String[] esteResultado : resultados) {
 
+            String ganadorPartido = "-";
+
             // guardo los valores en partido
             Partido partido = new Partido(esteResultado[2], esteResultado[4], esteResultado[5], esteResultado[3]);
 
             // guardo el resultadoGanador de cada partido tomando los datos de resultados
             resultadosGanador.add(partido.getResultado());
 
+            // Reemplazo el valor por defecto "-" (EMPATE), por el nombre del equipo GANADOR
+            if (partido.getResultado() == 1) {
+                ganadorPartido = esteResultado[2];
+            } else if (partido.getResultado() == 2) {
+                ganadorPartido = esteResultado[3];
+            }
+
             // muestro los datos de resultado + GANADOR
-            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5], partido.getResultado());
+            System.out.printf(formatoTablaResultados, esteResultado[0], esteResultado[1], esteResultado[2], esteResultado[3], esteResultado[4], esteResultado[5], ganadorPartido);
         }
 
         // Muestro los datos por separado
         System.out.printf("\n%15s %s %n", "PARTICIPANTES:", participantes);
         System.out.printf("%15s %s %n", "FASES:", fases);
         System.out.printf("%15s %s %n", "RONDAS:", rondas);
-        //System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
-        System.out.println(" ");
-        System.out.printf("%15s %s %n", "RESULTADO:", "");
+        // System.out.printf("%15s %s %n","RESULTADO:",resultadosGanador);
 
 
         // BUCLE comparando resultadosGanador con los pronósticos de cada participante.
+        System.out.println(" ");
+        System.out.printf("%15s %n", "RESULTADOS:");
+
         for (int i = 0; i < participantes.size(); i++) {
+
             // Creo un objeto por participante
             Pronostico pronostico = new Pronostico(cantidadParticipantes.getParticipantes().get(i));
             participantePronostico = pronostico.getPronostico();
 
             // Comparo resultadoGanador con cada participante
+            System.out.println("---------------------------------------");
+            System.out.printf("%35s %n", cantidadParticipantes.getParticipantes().get(i) + ": ");
+
             ResultadoEnum resultadoEnum = new ResultadoEnum(resultadosGanador, participantePronostico);
-            System.out.printf("%15s %s %n", cantidadParticipantes.getParticipantes().get(i) + ": ", resultadoEnum.getPuntos());
+            System.out.printf("%35s %s %n", "TOTAL DE PUNTOS OBTENIDOS: ", resultadoEnum.getPuntos());
 
             // List Pronostico del participante:
             // System.out.printf("%15s %s %n","PRONOSTICO:",cantidadParticipantes.getParticipantes().get(i) + ": " + participantePronostico);
 
             // Resultados:
             // Mariana: 20, Pedro:24, Juan: 20, Sofia: 21.
-            // Sofia acierta completa la ronda final.
-            // Nadie acierta completa la fase
+            // Sofia completa solo la ronda final.
+            // Nadie completa una fase.
         }
 
     }
